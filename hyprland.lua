@@ -133,6 +133,9 @@ hl.config({
     animations = {
         enabled = true,
     },
+		render = {
+			direct_scanout = 2,
+		},
 })
 
 -- Default curves and animations, see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Animations/
