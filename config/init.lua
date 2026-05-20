@@ -1,0 +1,7 @@
+require('config.general')
+require('config.decoration')
+require('config.animations')
+require('config.render')
+require('config.dwindle')
+require('config.misc')
+require('config.input')
