@@ -80,3 +80,11 @@ hl.bind(mouseSideBack, hl.dsp.pass({ window = "class:discord" }), { non_consumin
 -- Clipboard history
 hl.bind(mainMod .. " + V",
 	hl.dsp.exec_cmd("rofi -modi clipboard:/run/current-system/sw/bin/cliphist-rofi-img -show clipboard -show-icons"))
+
+-- Blue light filter
+hl.bind(mainMod .. " + XF86AudioRaiseVolume", hl.dsp.exec_cmd("hyprctl hyprsunset temperature +250"),
+	{ locked = true, repeating = true })
+hl.bind(mainMod .. " + XF86AudioLowerVolume", hl.dsp.exec_cmd("hyprctl hyprsunset temperature -250"),
+	{ locked = true, repeating = true })
+hl.bind(mainMod .. " + XF86AudioMute", hl.dsp.exec_cmd("hyprctl hyprsunset temperature 6000"),
+	{ locked = true, repeating = true })
