@@ -4,5 +4,5 @@ hl.monitor({
 	position = "auto",
 	scale = 1,
 	bitdepth = 10,
-	vrr = 1,
+	vrr = 0,
 })
