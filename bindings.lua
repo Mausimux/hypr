@@ -30,7 +30,7 @@ end, { mouse = true })
 bind({keys.mainMod, keys.SHIFT, keys.mouse_273}, hl.dsp.window.set_prop({ prop = "keep_aspect_ratio", value = "false" }),
 	{ release = true, mouse = true })
 
--- Laptop multimedia keys for volume and LCD brightness
+-- Laptop multimedia keys for volume
 bind({keys.XF86AudioRaiseVolume}, hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"),
 	{ locked = true, repeating = true })
 bind({keys.XF86AudioLowerVolume}, hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),
@@ -39,6 +39,4 @@ bind({keys.XF86AudioMute}, hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ 
 	{ locked = true, repeating = true })
 bind({keys.XF86AudioMicMute}, hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"),
 	{ locked = true, repeating = true })
-bind({keys.XF86MonBrightnessUp}, hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"), { locked = true, repeating = true })
-bind({keys.XF86MonBrightnessDown}, hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"), { locked = true, repeating = true })
 
