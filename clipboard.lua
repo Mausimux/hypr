@@ -1,7 +1,7 @@
 local keys = require('keys')
 
 -- Clipboard history
-hl.bind(keys.mainMod .. " + V",
+bind({keys.mainMod, keys.V},
 	hl.dsp.exec_cmd("rofi -modi clipboard:/run/current-system/sw/bin/cliphist-rofi-img -show clipboard -show-icons"))
 
 -- Clipboard paste watcher

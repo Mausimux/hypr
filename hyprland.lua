@@ -1,3 +1,4 @@
+require('bind')
 require('monitors')
 require('autostart')
 require('environment')
