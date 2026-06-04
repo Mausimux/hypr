@@ -6,6 +6,7 @@ require('environment')
 require('bindings')
 require('clipboard')
 require('discord')
+require('picture_in_picture')
 require('config')
 require('rules')
 

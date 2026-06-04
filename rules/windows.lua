@@ -30,18 +30,3 @@ hl.window_rule({
     float = true,
 })
 
-
-hl.window_rule({
-    name = "Picture in picture",
-
-    match = { initial_title = "Picture in picture" },
-
-    tile = false,
-    float = true,
-    no_initial_focus = true,
-    pin = true,
-    content = "video",
-
-    persistent_size = true,
-})
-
