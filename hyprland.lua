@@ -5,6 +5,7 @@ require('screenshot')
 require('environment')
 require('bindings')
 require('clipboard')
+require('discord')
 require('config')
 require('rules')
 
