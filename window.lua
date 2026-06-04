@@ -21,7 +21,6 @@ bind({keys.mainMod, keys.J}, hl.dsp.focus({ direction = "down" }))
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 bind({keys.mainMod, keys.mouse_272}, hl.dsp.window.drag(), { mouse = true })
 bind({keys.mainMod, keys.mouse_273}, hl.dsp.window.resize(), { mouse = true })
-bind({keys.mainMod, keys.mouse_273}, hl.dsp.window.resize(), { mouse = true })
 bind({keys.mainMod, keys.SHIFT, keys.mouse_273}, function()
 	hl.dispatch(hl.dsp.window.set_prop({ prop = "keep_aspect_ratio", value = "1" }))
 	hl.dispatch(hl.dsp.window.resize())
