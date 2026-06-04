@@ -1,6 +1,6 @@
 require('bind')
 require('monitors')
-require('autostart')
+require('blue_light_filter')
 require('environment')
 require('bindings')
 require('clipboard')

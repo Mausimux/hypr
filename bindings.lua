@@ -72,10 +72,3 @@ bind({keys.SHIFT, keys.Print}, hl.dsp.exec_cmd("hyprshot -m region --clipboard-o
 -- Discord mute
 bind({keys.mouseSideBack}, hl.dsp.pass({ window = "class:discord" }), { non_consuming = true })
 
--- Blue light filter
-bind({keys.mainMod, keys.XF86AudioRaiseVolume}, hl.dsp.exec_cmd("hyprctl hyprsunset temperature +250"),
-	{ locked = true, repeating = true })
-bind({keys.mainMod, keys.XF86AudioLowerVolume}, hl.dsp.exec_cmd("hyprctl hyprsunset temperature -250"),
-	{ locked = true, repeating = true })
-bind({keys.mainMod, keys.XF86AudioMute}, hl.dsp.exec_cmd("hyprctl hyprsunset temperature 6000"),
-	{ locked = true, repeating = true })
