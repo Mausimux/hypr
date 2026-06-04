@@ -42,10 +42,3 @@ bind({keys.XF86AudioMicMute}, hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOU
 bind({keys.XF86MonBrightnessUp}, hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"), { locked = true, repeating = true })
 bind({keys.XF86MonBrightnessDown}, hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"), { locked = true, repeating = true })
 
--- Requires playerctl
-bind({keys.XF86AudioNext}, hl.dsp.exec_cmd("playerctl next"), { locked = true })
-bind({keys.XF86AudioPause}, hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
-bind({keys.XF86AudioPlay}, hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
-bind({keys.XF86AudioPrev}, hl.dsp.exec_cmd("playerctl previous"), { locked = true })
-
-
