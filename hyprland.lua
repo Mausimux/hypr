@@ -7,6 +7,7 @@ require('bindings')
 require('clipboard')
 require('discord')
 require('picture_in_picture')
+require('workspaces')
 require('config')
 require('rules')
 
