@@ -1,54 +1,49 @@
 local apps = require('apps')
-
-local mainMod = "SUPER" -- Sets "Windows" key as main modifier
-
-local mouseSideFront = "mouse:280"
-local mouseSideMiddle = "mouse:281"
-local mouseSideBack = "mouse:282"
+local keys = require('keys')
 
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
-hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(apps.terminal))
-local closeWindowBind = hl.bind(mainMod .. " + C", hl.dsp.window.close())
+hl.bind(keys.mainMod .. " + Q", hl.dsp.exec_cmd(apps.terminal))
+local closeWindowBind = hl.bind(keys.mainMod .. " + C", hl.dsp.window.close())
 -- closeWindowBind:set_enabled(false)
-hl.bind(mainMod .. " + M",
+hl.bind(keys.mainMod .. " + M",
 	hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
-hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(apps.fileManager))
-hl.bind(mainMod .. " + F", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(apps.menu))
-hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
-hl.bind(mainMod .. " + T", hl.dsp.layout("togglesplit")) -- dwindle only
+hl.bind(keys.mainMod .. " + E", hl.dsp.exec_cmd(apps.fileManager))
+hl.bind(keys.mainMod .. " + F", hl.dsp.window.float({ action = "toggle" }))
+hl.bind(keys.mainMod .. " + R", hl.dsp.exec_cmd(apps.menu))
+hl.bind(keys.mainMod .. " + P", hl.dsp.window.pseudo())
+hl.bind(keys.mainMod .. " + T", hl.dsp.layout("togglesplit")) -- dwindle only
 
 -- Move focus with mainMod + arrow keys
-hl.bind(mainMod .. " + H", hl.dsp.focus({ direction = "left" }))
-hl.bind(mainMod .. " + L", hl.dsp.focus({ direction = "right" }))
-hl.bind(mainMod .. " + K", hl.dsp.focus({ direction = "up" }))
-hl.bind(mainMod .. " + J", hl.dsp.focus({ direction = "down" }))
+hl.bind(keys.mainMod .. " + H", hl.dsp.focus({ direction = "left" }))
+hl.bind(keys.mainMod .. " + L", hl.dsp.focus({ direction = "right" }))
+hl.bind(keys.mainMod .. " + K", hl.dsp.focus({ direction = "up" }))
+hl.bind(keys.mainMod .. " + J", hl.dsp.focus({ direction = "down" }))
 
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
 for i = 1, 10 do
 	local key = i % 10 -- 10 maps to key 0
-	hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
-	hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
+	hl.bind(keys.mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
+	hl.bind(keys.mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end
 
 -- Example special workspace (scratchpad)
-hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))
-hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
+hl.bind(keys.mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))
+hl.bind(keys.mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
 
 -- Scroll through existing workspaces with mainMod + scroll
-hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
-hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
+hl.bind(keys.mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
+hl.bind(keys.mainMod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
 
 -- Move/resize windows with mainMod + LMB/RMB and dragging
-hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
-hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
-hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
-hl.bind(mainMod .. " + SHIFT + mouse:273", function()
+hl.bind(keys.mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
+hl.bind(keys.mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
+hl.bind(keys.mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
+hl.bind(keys.mainMod .. " + SHIFT + mouse:273", function()
 	hl.dispatch(hl.dsp.window.set_prop({ prop = "keep_aspect_ratio", value = "1" }))
 	hl.dispatch(hl.dsp.window.resize())
 end, { mouse = true })
-hl.bind(mainMod .. " + SHIFT + mouse:273", hl.dsp.window.set_prop({ prop = "keep_aspect_ratio", value = "false" }),
+hl.bind(keys.mainMod .. " + SHIFT + mouse:273", hl.dsp.window.set_prop({ prop = "keep_aspect_ratio", value = "false" }),
 	{ release = true, mouse = true })
 
 -- Laptop multimedia keys for volume and LCD brightness
@@ -71,20 +66,16 @@ hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true 
 
 -- Screenshot
 hl.bind("Print", hl.dsp.exec_cmd("hyprshot -m active -m output --clipboard-only"))
-hl.bind(mainMod .. " + Print", hl.dsp.exec_cmd("hyprshot -m active -m window --clipboard-only"))
+hl.bind(keys.mainMod .. " + Print", hl.dsp.exec_cmd("hyprshot -m active -m window --clipboard-only"))
 hl.bind("SHIFT + Print", hl.dsp.exec_cmd("hyprshot -m region --clipboard-only"))
 
 -- Discord mute
-hl.bind(mouseSideBack, hl.dsp.pass({ window = "class:discord" }), { non_consuming = true })
-
--- Clipboard history
-hl.bind(mainMod .. " + V",
-	hl.dsp.exec_cmd("rofi -modi clipboard:/run/current-system/sw/bin/cliphist-rofi-img -show clipboard -show-icons"))
+hl.bind(keys.mouseSideBack, hl.dsp.pass({ window = "class:discord" }), { non_consuming = true })
 
 -- Blue light filter
-hl.bind(mainMod .. " + XF86AudioRaiseVolume", hl.dsp.exec_cmd("hyprctl hyprsunset temperature +250"),
+hl.bind(keys.mainMod .. " + XF86AudioRaiseVolume", hl.dsp.exec_cmd("hyprctl hyprsunset temperature +250"),
 	{ locked = true, repeating = true })
-hl.bind(mainMod .. " + XF86AudioLowerVolume", hl.dsp.exec_cmd("hyprctl hyprsunset temperature -250"),
+hl.bind(keys.mainMod .. " + XF86AudioLowerVolume", hl.dsp.exec_cmd("hyprctl hyprsunset temperature -250"),
 	{ locked = true, repeating = true })
-hl.bind(mainMod .. " + XF86AudioMute", hl.dsp.exec_cmd("hyprctl hyprsunset temperature 6000"),
+hl.bind(keys.mainMod .. " + XF86AudioMute", hl.dsp.exec_cmd("hyprctl hyprsunset temperature 6000"),
 	{ locked = true, repeating = true })
