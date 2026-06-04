@@ -64,11 +64,6 @@ bind({keys.XF86AudioPause}, hl.dsp.exec_cmd("playerctl play-pause"), { locked = 
 bind({keys.XF86AudioPlay}, hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 bind({keys.XF86AudioPrev}, hl.dsp.exec_cmd("playerctl previous"), { locked = true })
 
--- Screenshot
-bind({keys.Print}, hl.dsp.exec_cmd("hyprshot -m active -m output --clipboard-only"))
-bind({keys.mainMod, keys.Print}, hl.dsp.exec_cmd("hyprshot -m active -m window --clipboard-only"))
-bind({keys.SHIFT, keys.Print}, hl.dsp.exec_cmd("hyprshot -m region --clipboard-only"))
-
 -- Discord mute
 bind({keys.mouseSideBack}, hl.dsp.pass({ window = "class:discord" }), { non_consuming = true })
 

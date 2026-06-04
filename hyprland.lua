@@ -1,6 +1,7 @@
 require('bind')
 require('monitors')
 require('blue_light_filter')
+require('screenshot')
 require('environment')
 require('bindings')
 require('clipboard')
