@@ -1,17 +1,16 @@
-local apps = require('apps')
 local keys = require('keys')
 
--- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
-bind({keys.mainMod, keys.Q}, hl.dsp.exec_cmd(apps.terminal))
+-- Close window
 local closeWindowBind = bind({keys.mainMod, keys.C}, hl.dsp.window.close())
--- closeWindowBind:set_enabled(false)
-bind({keys.mainMod, keys.M},
-	hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
-bind({keys.mainMod, keys.E}, hl.dsp.exec_cmd(apps.fileManager))
+
+-- Toggle float
 bind({keys.mainMod, keys.F}, hl.dsp.window.float({ action = "toggle" }))
-bind({keys.mainMod, keys.R}, hl.dsp.exec_cmd(apps.menu))
+
+-- Pseudo
 bind({keys.mainMod, keys.P}, hl.dsp.window.pseudo())
-bind({keys.mainMod, keys.T}, hl.dsp.layout("togglesplit")) -- dwindle only
+
+-- Toggle split (dwindle only)
+bind({keys.mainMod, keys.T}, hl.dsp.layout("togglesplit"))
 
 -- Move focus with mainMod + arrow keys
 bind({keys.mainMod, keys.H}, hl.dsp.focus({ direction = "left" }))
@@ -29,14 +28,3 @@ bind({keys.mainMod, keys.SHIFT, keys.mouse_273}, function()
 end, { mouse = true })
 bind({keys.mainMod, keys.SHIFT, keys.mouse_273}, hl.dsp.window.set_prop({ prop = "keep_aspect_ratio", value = "false" }),
 	{ release = true, mouse = true })
-
--- Laptop multimedia keys for volume
-bind({keys.XF86AudioRaiseVolume}, hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"),
-	{ locked = true, repeating = true })
-bind({keys.XF86AudioLowerVolume}, hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),
-	{ locked = true, repeating = true })
-bind({keys.XF86AudioMute}, hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"),
-	{ locked = true, repeating = true })
-bind({keys.XF86AudioMicMute}, hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"),
-	{ locked = true, repeating = true })
-
