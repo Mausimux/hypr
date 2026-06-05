@@ -1,13 +1,13 @@
 bind(
-	{ Print },
+	{ 'Print' },
 	hl.dsp.exec_cmd("hyprshot -m active -m output --clipboard-only")
 )
 bind(
-	{ mainMod, Print },
+	{ main_mod, 'Print' },
 	hl.dsp.exec_cmd("hyprshot -m active -m window --clipboard-only")
 )
 bind(
-	{ SHIFT, Print },
+	{ 'SHIFT', 'Print' },
 	hl.dsp.exec_cmd("hyprshot -m region --clipboard-only")
 )
 

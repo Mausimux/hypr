@@ -1,27 +1,27 @@
 -- Close window
-local closeWindowBind = bind({mainMod, C}, hl.dsp.window.close())
+local closeWindowBind = bind({main_mod, 'C'}, hl.dsp.window.close())
 
 -- Toggle float
-bind({mainMod, F}, hl.dsp.window.float({ action = "toggle" }))
+bind({main_mod, 'F'}, hl.dsp.window.float({ action = "toggle" }))
 
 -- Pseudo
-bind({mainMod, P}, hl.dsp.window.pseudo())
+bind({main_mod, 'P'}, hl.dsp.window.pseudo())
 
 -- Toggle split (dwindle only)
-bind({mainMod, T}, hl.dsp.layout("togglesplit"))
+bind({main_mod, 'T'}, hl.dsp.layout("togglesplit"))
 
--- Move focus with mainMod + arrow keys
-bind({mainMod, H}, hl.dsp.focus({ direction = "left" }))
-bind({mainMod, L}, hl.dsp.focus({ direction = "right" }))
-bind({mainMod, K}, hl.dsp.focus({ direction = "up" }))
-bind({mainMod, J}, hl.dsp.focus({ direction = "down" }))
+-- Move focus with 'mainMod' + arrow keys
+bind({main_mod, 'H'}, hl.dsp.focus({ direction = "left" }))
+bind({main_mod, 'L'}, hl.dsp.focus({ direction = "right" }))
+bind({main_mod, 'K'}, hl.dsp.focus({ direction = "up" }))
+bind({main_mod, 'J'}, hl.dsp.focus({ direction = "down" }))
 
--- Move/resize windows with mainMod + LMB/RMB and dragging
-bind({mainMod, mouse_272}, hl.dsp.window.drag(), { mouse = true })
-bind({mainMod, mouse_273}, hl.dsp.window.resize(), { mouse = true })
-bind({mainMod, SHIFT, mouse_273}, function()
+-- Move/resize windows with 'mainMod' + LMB/RMB and dragging
+bind({main_mod, left_click_drag}, hl.dsp.window.drag(), { mouse = true })
+bind({main_mod, right_click_drag}, hl.dsp.window.resize(), { mouse = true })
+bind({main_mod, 'SHIFT', right_click_drag}, function()
 	hl.dispatch(hl.dsp.window.set_prop({ prop = "keep_aspect_ratio", value = "1" }))
 	hl.dispatch(hl.dsp.window.resize())
 end, { mouse = true })
-bind({mainMod, SHIFT, mouse_273}, hl.dsp.window.set_prop({ prop = "keep_aspect_ratio", value = "false" }),
+bind({main_mod, 'SHIFT', right_click_drag}, hl.dsp.window.set_prop({ prop = "keep_aspect_ratio", value = "false" }),
 	{ release = true, mouse = true })

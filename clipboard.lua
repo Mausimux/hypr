@@ -1,5 +1,5 @@
 -- Clipboard history
-bind({mainMod, V},
+bind({main_mod, 'V'},
 	hl.dsp.exec_cmd("rofi -modi clipboard:/run/current-system/sw/bin/cliphist-rofi-img -show clipboard -show-icons"))
 
 -- Clipboard paste watcher

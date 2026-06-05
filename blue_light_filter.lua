@@ -3,17 +3,17 @@ hl.on('hyprland.start', function ()
 end)
 
 bind(
-	{ mainMod, XF86AudioRaiseVolume },
+	{ main_mod, 'XF86AudioRaiseVolume' },
 	hl.dsp.exec_cmd("hyprctl hyprsunset temperature +250"),
 	{ locked = true, repeating = true }
 )
 bind(
-	{ mainMod, XF86AudioLowerVolume },
+	{ main_mod, 'XF86AudioLowerVolume' },
 	hl.dsp.exec_cmd("hyprctl hyprsunset temperature -250"),
 	{ locked = true, repeating = true }
 )
 bind(
-	{ mainMod, XF86AudioMute },
+	{ main_mod, 'XF86AudioMute' },
 	hl.dsp.exec_cmd("hyprctl hyprsunset temperature 6000"),
 	{ locked = true, repeating = true }
 )
