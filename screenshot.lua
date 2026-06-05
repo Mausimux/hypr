@@ -1,15 +1,13 @@
-local keys = require('keys')
-
 bind(
-	{ keys.Print },
+	{ Print },
 	hl.dsp.exec_cmd("hyprshot -m active -m output --clipboard-only")
 )
 bind(
-	{ keys.mainMod, keys.Print },
+	{ mainMod, Print },
 	hl.dsp.exec_cmd("hyprshot -m active -m window --clipboard-only")
 )
 bind(
-	{ keys.SHIFT, keys.Print },
+	{ SHIFT, Print },
 	hl.dsp.exec_cmd("hyprshot -m region --clipboard-only")
 )
 

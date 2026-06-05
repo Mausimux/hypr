@@ -1,4 +1,4 @@
-require('bind')
+require('hyprlua')
 require('monitors')
 require('blue_light_filter')
 require('screenshot')

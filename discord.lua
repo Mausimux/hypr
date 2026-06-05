@@ -1,6 +1,4 @@
-local keys = require('keys')
-
-bind({keys.mouseSideBack}, hl.dsp.pass({ window = "class:discord" }), { non_consuming = true })
+bind({mouseSideBack}, hl.dsp.pass({ window = "class:discord" }), { non_consuming = true })
 
 hl.window_rule({
     name = "Tag Discord Popout",
