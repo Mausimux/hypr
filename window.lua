@@ -16,6 +16,12 @@ bind({main_mod, 'L'}, hl.dsp.focus({ direction = "right" }))
 bind({main_mod, 'K'}, hl.dsp.focus({ direction = "up" }))
 bind({main_mod, 'J'}, hl.dsp.focus({ direction = "down" }))
 
+-- Move window with 'mainMod' + arrow keys
+bind({main_mod, 'SHIFT', 'H'}, hl.dsp.window.move({ direction = "left" }))
+bind({main_mod, 'SHIFT', 'L'}, hl.dsp.window.move({ direction = "right" }))
+bind({main_mod, 'SHIFT', 'K'}, hl.dsp.window.move({ direction = "up" }))
+bind({main_mod, 'SHIFT', 'J'}, hl.dsp.window.move({ direction = "down" }))
+
 -- Move/resize windows with 'mainMod' + LMB/RMB and dragging
 bind({main_mod, left_click_drag}, hl.dsp.window.drag(), { mouse = true })
 bind({main_mod, right_click_drag}, hl.dsp.window.resize(), { mouse = true })
