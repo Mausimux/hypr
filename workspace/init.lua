@@ -4,6 +4,3 @@ for i = 1, 10 do
 	bind({main_mod, 'SHIFT', key}, hl.dsp.window.move({ workspace = i }))
 end
 
-bind({main_mod, 'S'}, hl.dsp.workspace.toggle_special("magic"))
-bind({main_mod, 'SHIFT', 'S'}, hl.dsp.window.move({ workspace = "special:magic" }))
-
