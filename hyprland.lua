@@ -10,7 +10,7 @@ require('audio')
 require('clipboard')
 require('discord')
 require('picture_in_picture')
-require('workspaces')
+require('workspace')
 require('config')
 require('rules')
 
