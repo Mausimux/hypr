@@ -1,4 +1,5 @@
 require('hyprlua')
+require('persistent_position')
 require('keys')
 require('monitors')
 require('blue_light_filter')
