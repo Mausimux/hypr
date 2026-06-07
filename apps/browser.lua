@@ -1,4 +1,4 @@
-local browser = require('apps').browser
+local browser = 'brave'
 
 hl.on('hyprland.start', function ()
 	hl.exec_cmd(browser, { workspace = 1 })
