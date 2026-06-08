@@ -1,3 +1,3 @@
 event.start(function()
-	hl.dispatch(hl.dsp.exec_cmd('qs'))
+	hl.exec_cmd('qs')
 end)
