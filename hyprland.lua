@@ -13,4 +13,4 @@ require('picture_in_picture')
 require('workspace')
 require('config')
 require('rules')
-
+require('quickshell')
