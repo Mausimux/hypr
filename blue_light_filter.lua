@@ -1,4 +1,4 @@
-hl.on('hyprland.start', function ()
+event.start(function ()
 	hl.exec_cmd('hyprsunset')
 end)
 

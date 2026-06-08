@@ -1,3 +1,3 @@
-hl.on('hyprland.start', function()
+event.start(function()
 	hl.dispatch(hl.dsp.exec_cmd('qs'))
 end)

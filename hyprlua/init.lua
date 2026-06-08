@@ -1,4 +1,5 @@
 require('hyprlua.bind')
+event = require('hyprlua.event')
 
 all = function(cmds)
 	return table.concat(cmds, ' && ')

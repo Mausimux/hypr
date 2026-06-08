@@ -1,4 +1,4 @@
-hl.on('hyprland.start', function ()
+event.start(function ()
 	hl.exec_cmd(run_when_network_is_up('discord'), { workspace = '2 silent' })
 end)
 
