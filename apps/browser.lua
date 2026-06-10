@@ -1,5 +1,15 @@
-local browser = 'brave'
+local browser = {
+	cmd = 'brave',
+	initial_class = 'brave-browser',
+}
+
+hl.window_rule({
+	name = 'Browser workspace',
+	match = { initial_class = browser.initial_class },
+	workspace = '1 silent',
+})
 
 event.start(function ()
-	hl.exec_cmd(run_when_network_is_up(browser), { workspace = '1 silent' })
+	hl.exec_cmd(run_when_network_is_up(browser.cmd))
 end)
+
