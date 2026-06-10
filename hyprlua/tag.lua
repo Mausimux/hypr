@@ -1,7 +1,9 @@
 local tag = {}
 
 tag.has = function(win, tag)
-	if win.tags[tag] or win.tags[tag..'*'] then return true end
+	for _, t in ipairs(win.tags) do
+		if t == tag or t == tag..'*' then return true end
+	end
 	return false
 end
 

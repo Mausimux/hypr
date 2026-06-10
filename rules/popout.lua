@@ -1,4 +1,4 @@
-local persistent_position = require('persistent_position.tag')
+local persistent_position = require('persistent_position')
 
 hl.window_rule({
 	name = "Floating popouts",
