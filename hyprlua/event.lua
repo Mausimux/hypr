@@ -1,4 +1,4 @@
-local event = hl.event or {}
+local event = {}
 
 event.start = function(callback)
 	hl.on('hyprland.start', callback)
