@@ -1,10 +1,6 @@
 local persistent_position = require('persistent_position')
 
-hl.window_rule({
-	name = "Floating popouts",
-
-	match = { tag = "popout" },
-
+window_rule("Floating popouts", { tag = "popout" }, {
 	tile = false,
 	float = true,
 	no_initial_focus = true,
@@ -12,6 +8,6 @@ hl.window_rule({
 	content = "video",
 
 	persistent_size = true,
-	tag = persistent_position.add_tag
+	tag = persistent_position.add_tag,
 })
 
