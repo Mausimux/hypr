@@ -1,6 +1,6 @@
 -- Clipboard history
 bind({main_mod, 'V'},
-	hl.dsp.exec_cmd("rofi -modi clipboard:/run/current-system/sw/bin/cliphist-rofi-img -show clipboard -show-icons"))
+	hl.dsp.exec_cmd('cliphist list | rofi -dmenu -display-columns 2 | cliphist decode | wl-copy'))
 
 -- Clipboard paste watcher
 event.start(function ()
