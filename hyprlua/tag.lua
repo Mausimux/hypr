@@ -1,20 +1,20 @@
-return {
+local tag = hl.tag or {}
 
-has_tag = function(win, tag)
+tag.has_tag = function(win, tag)
 	if win.tags[tag] or win.tags[tag..'*'] then return true end
 	return false
-end,
+end
 
-add_tag = function(win, tag)
+tag.add_tag = function(win, tag)
 	hl.dsp.window.tag{ tag = '+'..tag, window = 'address'..win.address }
-end,
+end
 
-del_tag = function(win, tag)
+tag.del_tag = function(win, tag)
 	hl.dsp.window.tag{ tag = '-'..tag, window = 'address'..win.address }
-end,
+end
 
-toggle_tag = function(win, tag)
+tag.toggle_tag = function(win, tag)
 	hl.dsp.window.tag{ tag = tag, window = 'address'..win.address }
-end,
+end
 
-}
+return tag

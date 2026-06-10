@@ -6,7 +6,7 @@ local function identifier(win)
 	return win.initial_title .. '|' .. win.initial_class
 end
 
-event.window.open(function(win)
+hl.event.window.open(function(win)
 	if not tag.has_tag(win) then return end
 
 	local position = positions[identifier(win)]
@@ -18,7 +18,7 @@ event.window.open(function(win)
 	end
 end)
 
-event.window.close(function(win)
+hl.event.window.close(function(win)
 	if not tag.has_tag(win) then return end
 
 	local x, y = win.at.x, win.at.y

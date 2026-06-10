@@ -9,7 +9,7 @@ hl.window_rule({
 	workspace = '1 silent',
 })
 
-event.start(function ()
-	hl.exec_cmd(run_when_network_is_up(browser.cmd))
+hl.event.start(function ()
+	hl.exec_cmd(hl.run_when_network_is_up(browser.cmd))
 end)
 

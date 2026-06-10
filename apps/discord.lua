@@ -9,11 +9,11 @@ hl.window_rule({
 	workspace = '2 silent',
 })
 
-event.start(function ()
-	hl.exec_cmd(run_when_network_is_up(discord.cmd))
+hl.event.start(function ()
+	hl.exec_cmd(hl.run_when_network_is_up(discord.cmd))
 end)
 
-bind({mouse_side_last}, hl.dsp.pass({ window = 'initialclass:' .. discord.initial_class }), { non_consuming = true })
+hl.bind({mouse_side_last}, hl.dsp.pass({ window = 'initialclass:' .. discord.initial_class }), { non_consuming = true })
 
 hl.window_rule({
 	name = 'Tag Discord Popout',

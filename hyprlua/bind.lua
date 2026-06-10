@@ -1,6 +1,8 @@
-bind = function(keys, dispatcher, opts)
+local native_bind = hl.bind
+
+return function(keys, dispatcher, opts)
 	if type(keys) == "table" then
 		keys = table.concat(keys, " + ")
 	end
-	hl.bind(keys, dispatcher, opts)
+	native_bind(keys, dispatcher, opts)
 end

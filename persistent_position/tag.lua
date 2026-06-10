@@ -1,5 +1,3 @@
-local tag_api = require('hyprlua.tag')
-
 local M = {}
 
 M.tag = 'persistent_position'
@@ -10,7 +8,7 @@ M.add_tag = '+' .. M.tag
 M.remove_tag = '-' .. M.tag
 
 M.has_tag = function(win)
-	return tag_api.has_tag(win, M.tag)
+	return hl.tag.has_tag(win, M.tag)
 end
 
 return M

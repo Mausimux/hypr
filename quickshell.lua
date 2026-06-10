@@ -1,3 +1,3 @@
-event.start(function()
+hl.event.start(function()
 	hl.exec_cmd('qs')
 end)
