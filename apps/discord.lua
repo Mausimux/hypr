@@ -1,3 +1,5 @@
+local utils = require('utils')
+
 local discord = {
 	cmd = 'discord',
 	initial_class = 'discord',
@@ -10,7 +12,7 @@ hl.window_rule({
 })
 
 hl.event.start(function ()
-	hl.exec_cmd(hl.run_when_network_is_up(discord.cmd))
+	hl.exec_cmd(utils.run_when_network_is_up(discord.cmd))
 end)
 
 hl.bind({mouse_side_last}, hl.dsp.pass({ window = 'initialclass:' .. discord.initial_class }), { non_consuming = true })

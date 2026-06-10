@@ -1,3 +1,5 @@
+local utils = require('utils')
+
 local browser = {
 	cmd = 'brave',
 	initial_class = 'brave-browser',
@@ -10,6 +12,6 @@ hl.window_rule({
 })
 
 hl.event.start(function ()
-	hl.exec_cmd(hl.run_when_network_is_up(browser.cmd))
+	hl.exec_cmd(utils.run_when_network_is_up(browser.cmd))
 end)
 
