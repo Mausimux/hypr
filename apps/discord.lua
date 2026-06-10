@@ -15,6 +15,5 @@ end)
 
 bind({mouse_side_last}, hl.dsp.pass({ window = 'initialclass:' .. discord.initial_class }), { non_consuming = true })
 
-window_rule('Tag Discord Popout', { initial_title = 'Discord Popout', initial_class = discord.initial_class }, {
-	tag = 'popout',
-})
+tag.add({ initial_title = 'Discord Popout', initial_class = discord.initial_class }, 'popout')
+
