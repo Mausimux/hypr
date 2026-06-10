@@ -1,4 +1,4 @@
-hl.bind = require('hyprlua.bind')
-hl.event = require('hyprlua.event')
-hl.tag = require('hyprlua.tag')
+bind = require('hyprlua.bind')
+event = require('hyprlua.event')
+tag = require('hyprlua.tag')
 

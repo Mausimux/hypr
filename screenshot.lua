@@ -1,12 +1,12 @@
-hl.bind(
+bind(
 	{ 'Print' },
 	hl.dsp.exec_cmd("hyprshot -m active -m output --clipboard-only")
 )
-hl.bind(
+bind(
 	{ main_mod, 'Print' },
 	hl.dsp.exec_cmd("hyprshot -m active -m window --clipboard-only")
 )
-hl.bind(
+bind(
 	{ 'SHIFT', 'Print' },
 	hl.dsp.exec_cmd("hyprshot -m region --clipboard-only")
 )
