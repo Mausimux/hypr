@@ -5,9 +5,10 @@ local browser = {
 	initial_class = 'brave-browser',
 }
 
-window_rule({ initial_class = browser.initial_class }, {
+hl.window_rule{
+	match = { initial_class = browser.initial_class },
 	workspace = '1 silent',
-})
+}
 
 event.start(function ()
 	hl.exec_cmd(utils.run_when_network_is_up(browser.cmd))

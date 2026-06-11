@@ -5,9 +5,10 @@ local discord = {
 	initial_class = 'discord',
 }
 
-window_rule({ initial_class = discord.initial_class }, {
+hl.window_rule{
+	match = { initial_class = discord.initial_class },
 	workspace = '2 silent',
-})
+}
 
 event.start(function ()
 	hl.exec_cmd(utils.run_when_network_is_up(discord.cmd))
