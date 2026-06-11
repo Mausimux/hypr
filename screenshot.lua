@@ -13,8 +13,7 @@ bind(
 
 -- Disable animation on selection overlay to avoid black borders around screenshots
 -- https://discord.com/channels/961691461554950145/967398886530515067/1496929329555312659
-hl.layer_rule({
-	name = 'No animation for selection',
+hl.layer_rule{
 	match = { namespace = 'selection' },
 	no_anim = true,
-})
+}
