@@ -8,7 +8,7 @@ tag.has = function(win, tag)
 end
 
 tag.add = function(win, tag)
-	if type(win) == "table" and win.address then
+	if type(win) == 'table' and win.address then
 		hl.dsp.window.tag{ tag = '+'..tag, window = 'address'..win.address }
 	else
 		window_rule(win, { tag = '+'..tag })
@@ -16,7 +16,7 @@ tag.add = function(win, tag)
 end
 
 tag.remove = function(win, tag)
-	if type(win) == "table" and win.address then
+	if type(win) == 'table' and win.address then
 		hl.dsp.window.tag{ tag = '-'..tag, window = 'address'..win.address }
 	else
 		window_rule(win, { tag = '-'..tag })
@@ -24,7 +24,7 @@ tag.remove = function(win, tag)
 end
 
 tag.toggle = function(win, tag)
-	if type(win) == "table" and win.address then
+	if type(win) == 'table' and win.address then
 		hl.dsp.window.tag{ tag = tag, window = 'address'..win.address }
 	else
 		window_rule(win, { tag = tag })

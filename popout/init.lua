@@ -6,7 +6,7 @@ window_rule({ tag = popout_tag }, {
 	float = true,
 	no_initial_focus = true,
 	pin = true,
-	content = "video",
+	content = 'video',
 
 	persistent_size = true,
 })

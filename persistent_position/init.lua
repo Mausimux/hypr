@@ -14,7 +14,7 @@ event.window.open(function(win)
 
 	local x, y = position.x, position.y
 	if x and y then
-		hl.dispatch(hl.dsp.window.move({ x = x, y = y, window = "address:" .. win.address }))
+		hl.dispatch(hl.dsp.window.move({ x = x, y = y, window = 'address:' .. win.address }))
 	end
 end)
 
