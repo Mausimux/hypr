@@ -1,2 +1,2 @@
-tag.add({ initial_title = 'Picture in picture' }, 'popout')
+tag.add('popout', { initial_title = 'Picture in picture' })
 

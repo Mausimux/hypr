@@ -7,7 +7,7 @@ local function identifier(win)
 end
 
 event.window.open(function(win)
-	if not tag.has(win, persistent_position_tag) then return end
+	if not tag.has(persistent_position_tag, win) then return end
 
 	local position = positions[identifier(win)]
 	if not position then return end
@@ -19,7 +19,7 @@ event.window.open(function(win)
 end)
 
 event.window.close(function(win)
-	if not tag.has(win, persistent_position_tag) then return end
+	if not tag.has(persistent_position_tag, win) then return end
 
 	local x, y = win.at.x, win.at.y
 	if x and y then

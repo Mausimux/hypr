@@ -11,4 +11,4 @@ hl.window_rule{
 	persistent_size = true,
 }
 
-tag.add({ tag = popout_tag }, persistent_position_tag)
+tag.add(persistent_position_tag, { tag = popout_tag })
