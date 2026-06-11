@@ -1,6 +1,6 @@
 local persistent_position = require('persistent_position')
 
-window_rule("Floating popouts", { tag = "popout" }, {
+window_rule({ tag = "popout" }, {
 	tile = false,
 	float = true,
 	no_initial_focus = true,

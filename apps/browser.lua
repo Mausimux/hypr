@@ -5,7 +5,7 @@ local browser = {
 	initial_class = 'brave-browser',
 }
 
-window_rule('Browser workspace', { initial_class = browser.initial_class }, {
+window_rule({ initial_class = browser.initial_class }, {
 	workspace = '1 silent',
 })
 

@@ -1,8 +1,8 @@
-window_rule("suppress-maximize-events", { class = ".*" }, {
+window_rule({ class = ".*" }, {
     suppress_event = "maximize",
 })
 
-window_rule("fix-xwayland-drags", {
+window_rule({
     class      = "^$",
     title      = "^$",
     xwayland   = true,
@@ -13,7 +13,7 @@ window_rule("fix-xwayland-drags", {
     no_focus = true,
 })
 
-window_rule("move-hyprland-run", { class = "hyprland-run" }, {
+window_rule({ class = "hyprland-run" }, {
     move  = "20 monitor_h-120",
     float = true,
 })

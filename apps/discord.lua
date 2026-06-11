@@ -5,7 +5,7 @@ local discord = {
 	initial_class = 'discord',
 }
 
-window_rule('Discord workspace', { initial_class = discord.initial_class }, {
+window_rule({ initial_class = discord.initial_class }, {
 	workspace = '2 silent',
 })
 
