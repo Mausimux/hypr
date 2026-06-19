@@ -1,5 +1,5 @@
 local terminal = 'kitty'
 
-bind({main_mod, 'Q'}, hl.dsp.exec_cmd(terminal))
+bind({main_mod, 'T'}, hl.dsp.exec_cmd(terminal))
 
 return terminal
