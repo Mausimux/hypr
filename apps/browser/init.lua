@@ -1,3 +1,5 @@
+require('apps.browser.bitwardern')
+
 local utils = require('utils')
 
 local browser = {
