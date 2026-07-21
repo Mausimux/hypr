@@ -1,2 +1,2 @@
-tag.add('popout', { initial_title = 'Picture in picture' })
+tag.add(require('popout.tag'), { initial_title = 'Picture in picture' })
 
