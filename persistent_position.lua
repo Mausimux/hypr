@@ -1,4 +1,6 @@
-local persistent_position_tag = require('persistent_position.tag')
+local M = {}
+
+local tag_name = 'persistent_position'
 
 local cache_dir = os.getenv('HOME') .. '/.cache/hypr'
 local save_path = cache_dir .. '/persistent_position'
@@ -49,24 +51,35 @@ local function save_position(window, x, y)
 	file:close()
 end
 
-event.window.open(function(win)
-	if not tag.has(persistent_position_tag, win) then return end
+function M.init()
+	event.window.open(function(win)
+		if not tag.has(tag_name, win) then return end
 
-	local position = positions[identifier(win)]
-	if not position then return end
+		local position = positions[identifier(win)]
+		if not position then return end
 
-	local x, y = position.x, position.y
-	if x and y then
-		hl.dispatch(hl.dsp.window.move({ x = x, y = y, window = 'address:' .. win.address }))
-	end
-end)
+		local x, y = position.x, position.y
+		if x and y then
+			hl.dispatch(hl.dsp.window.move{
+				x = x,
+				y = y,
+				window = 'address:' .. win.address
+			})
+		end
+	end)
 
-event.window.close(function(win)
-	if not tag.has(persistent_position_tag, win) then return end
+	event.window.close(function(win)
+		if not tag.has(tag_name, win) then return end
 
-	local x, y = win.at.x, win.at.y
-	if x and y then
-		save_position(win, x, y)
-	end
-end)
+		local x, y = win.at.x, win.at.y
+		if x and y then
+			save_position(win, x, y)
+		end
+	end)
+end
 
+function M.add(win_or_rule)
+	tag.add(tag_name, win_or_rule)
+end
+
+return M

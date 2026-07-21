@@ -11,4 +11,4 @@ hl.window_rule{
 	persistent_size = true,
 }
 
-tag.add(require('persistent_position.tag'), window_match)
+persistent_position.add(window_match)
