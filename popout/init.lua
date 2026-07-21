@@ -1,5 +1,4 @@
 local popout_tag = require('popout.tag')
-local persistent_position_tag = require('persistent_position.tag')
 
 hl.window_rule{
 	match = { tag = popout_tag },
@@ -11,4 +10,5 @@ hl.window_rule{
 	persistent_size = true,
 }
 
-tag.add(persistent_position_tag, { tag = popout_tag })
+tag.add(require('persistent_position.tag'), { tag = popout_tag })
+tag.add(require('no_auto_focus.tag'), { tag = popout_tag })
