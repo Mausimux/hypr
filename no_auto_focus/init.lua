@@ -6,11 +6,11 @@ local no_auto_focus = hl.window_rule{
 	no_focus = true,
 }
 
-hl.on("window.close", function(_window)
+event.window.close(function(_window)
 	no_auto_focus:set_enabled(true)
 end)
 
-hl.on("window.active", function(_window)
+event.window.active(function(_window)
 	no_auto_focus:set_enabled(false)
 end)
 
