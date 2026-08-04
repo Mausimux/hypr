@@ -5,6 +5,7 @@ no_auto_focus = require('no_auto_focus')
 popout = require('popout')
 
 require('keys')
+require('portals_bullshit')
 require('monitors')
 require('blue_light_filter')
 require('screenshot')
