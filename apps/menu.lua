@@ -1,4 +1,4 @@
-local menu = 'rofi -show combi -modes combi -combi-modes "window,drun,run"'
+local menu = 'rofi -show drun'
 
 bind({main_mod, 'SPACE'}, hl.dsp.exec_cmd(menu))
 
