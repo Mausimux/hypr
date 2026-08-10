@@ -9,4 +9,4 @@ scroll_up = 'mouse_up'
 
 mouse_side_first = 'mouse:280'
 mouse_side_middle = 'mouse:281'
-mouse_side_last = 'mouse:282'
+mouse_side_last = 'CTRL + SHIFT + M'
