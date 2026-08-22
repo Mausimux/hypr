@@ -3,8 +3,8 @@ require('apps.browser.bitwardern')
 local utils = require('utils')
 
 local browser = {
-	cmd = 'brave',
-	initial_class = 'brave-browser',
+	cmd = 'brave-origin',
+	initial_class = 'brave-origin',
 }
 
 hl.window_rule{
