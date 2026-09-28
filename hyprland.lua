@@ -19,6 +19,7 @@ require('config')
 require('rules')
 require('quickshell')
 require('clock')
+require('animations')
 
 persistent_position.init()
 popout.init()
