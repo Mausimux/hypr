@@ -1,7 +1,7 @@
 return function(application)
 	application.rule = hl.window_rule {
 		match = { initial_class = application.initial_class },
-		workspace = application.workspace,
+		workspace = application.workspace_name,
 	}
 
 	function application:get_window()
