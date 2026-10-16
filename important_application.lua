@@ -20,7 +20,10 @@ return function(application)
 			return
 		end
 
-		if application.workspace_name == hl.get_active_workspace().name then
+		local current_workspace = hl.get_active_special_workspace() or hl.get_active_workspace()
+		if not current_workspace then return end
+
+		if application.workspace_name == current_workspace.name then
 			focus { workspace = hl.get_last_workspace() }
 			return
 		end
@@ -36,7 +39,7 @@ return function(application)
 			return
 		end
 
-		local current_workspace = hl.get_active_workspace()
+		local current_workspace = hl.get_active_special_workspace() or hl.get_active_workspace()
 		if not current_workspace then return end
 
 		if current_workspace.name == application.workspace_name then
