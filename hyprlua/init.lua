@@ -1,4 +1,5 @@
 bind = require('hyprlua.bind')
 event = require('hyprlua.event')
 tag = require('hyprlua.tag')
-
+move = require('hyprlua.move')
+focus = require('hyprlua.focus')
