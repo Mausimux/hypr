@@ -1,3 +1,6 @@
+local tag = require('hyprlua.tag')
+local popout = require('popout')
+
 return function(application)
 	application.rule = hl.window_rule {
 		match = {
@@ -8,10 +11,14 @@ return function(application)
 	}
 
 	function application:get_window()
-		if self.initial_title then
-			return hl.get_window('initialtitle:' .. self.initial_title)
-		else
-			return hl.get_window('initialclass:' .. self.initial_class)
+		local windows = hl.get_windows {
+			title = self.initial_title,
+			class = self.initial_class,
+		}
+		for _, window in ipairs(windows) do
+			if not tag.has(popout.tag_name, window) then
+				return window
+			end
 		end
 	end
 
