@@ -1,11 +1,18 @@
 return function(application)
 	application.rule = hl.window_rule {
-		match = { initial_class = application.initial_class },
+		match = {
+			initial_title = application.initial_title,
+			initial_class = application.initial_class,
+		},
 		workspace = application.workspace_name,
 	}
 
 	function application:get_window()
-		return hl.get_window('initialclass:' .. self.initial_class)
+		if self.initial_title then
+			return hl.get_window('initialtitle:' .. self.initial_title)
+		else
+			return hl.get_window('initialclass:' .. self.initial_class)
+		end
 	end
 
 	function application:open(rules)
