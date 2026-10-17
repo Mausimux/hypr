@@ -61,14 +61,20 @@ return function(application)
 
 	bind({ main_mod, 'SHIFT', application.key }, function()
 		local window = application:get_window()
+
+		local current_workspace = hl.get_active_special_workspace() or hl.get_active_workspace()
+		if not current_workspace then return end
+
 		if not window then
+			if current_workspace.name == application.workspace_name then
+				focus { workspace = hl.get_last_workspace() }
+				return
+			end
+
 			application.rule:set_enabled(false)
 			application:open()
 			return
 		end
-
-		local current_workspace = hl.get_active_special_workspace() or hl.get_active_workspace()
-		if not current_workspace then return end
 
 		if current_workspace.name == application.workspace_name then
 			move { window = window, workspace = hl.get_last_workspace() }
