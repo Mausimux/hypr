@@ -11,14 +11,18 @@ return function(application)
 	}
 
 	function application:get_window()
-		local windows = hl.get_windows {
-			title = self.initial_title,
-			class = self.initial_class,
-		}
+		local windows = hl.get_windows()
 		for _, window in ipairs(windows) do
+			if self.initial_title and window.initial_title ~= self.initial_title then
+				goto continue
+			end
+			if self.initial_class and window.initial_class ~= self.initial_class then
+				goto continue
+			end
 			if not tag.has(popout.tag_name, window) then
 				return window
 			end
+			::continue::
 		end
 	end
 
