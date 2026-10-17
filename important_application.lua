@@ -9,7 +9,13 @@ return function(application)
 	end
 
 	function application:open(rules)
-		return hl.dispatch(hl.dsp.exec_cmd(self.cmd, rules))
+		local cmd = self.cmd
+		if type(cmd) == 'function' then
+			cmd = cmd()
+		end
+		if type(cmd) == 'string' then
+			return hl.dispatch(hl.dsp.exec_cmd(cmd, rules))
+		end
 	end
 
 	bind({ main_mod, application.key }, function()
