@@ -52,6 +52,10 @@ return function(application)
 			return
 		end
 
+		if window.active and window.workspace == current_workspace then
+			move { window = window, workspace = application.workspace_name }
+		end
+
 		focus { window = window }
 	end)
 
@@ -72,7 +76,7 @@ return function(application)
 		end
 
 		if current_workspace == window.workspace then
-			move { window = window, workspace = application.workspace_name }
+			move { window = window, workspace = application.workspace_name, follow = false }
 		else
 			move { window = window, workspace = current_workspace }
 		end
