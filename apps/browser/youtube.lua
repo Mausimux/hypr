@@ -1,9 +1,10 @@
 local important_application = require('important_application')
+local desktop_file_application = require('desktop_file_application')
 
 local youtube = {
 	key = 'Y',
-	cmd = 'brave-origin --app-id=agimnkijcaahngcdmfeangaknmldooml',
-	initial_class = 'brave-agimnkijcaahngcdmfeangaknmldooml-Default',
+	cmd = desktop_file_application('YouTube'),
+	initial_title = 'YouTube',
 	workspace_name = 'youtube',
 }
 
