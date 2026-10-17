@@ -1,5 +1,6 @@
 require('apps.browser.bitwardern')
 require('apps.browser.youtube')
+require('apps.browser.whatsapp')
 local important_application = require('important_application')
 
 local browser = {
