@@ -48,7 +48,9 @@ return function(application)
 		if not current_workspace then return end
 
 		if application.workspace_name == current_workspace.name then
-			focus { workspace = hl.get_last_workspace() }
+			local previous_workspace = hl.get_last_workspace()
+			if not previous_workspace then return end
+			focus { workspace = previous_workspace }
 			return
 		end
 
@@ -77,7 +79,9 @@ return function(application)
 		end
 
 		if current_workspace.name == application.workspace_name then
-			move { window = window, workspace = hl.get_last_workspace() }
+			local previous_workspace = hl.get_last_workspace()
+			if not previous_workspace then return end
+			move { window = window, workspace = previous_workspace }
 			return
 		end
 
