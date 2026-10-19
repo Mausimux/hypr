@@ -113,6 +113,10 @@ event.config.reloaded = function(callback)
 	hl.on('config.reloaded', callback)
 end
 
+event.config.unload = function(callback)
+	hl.on('config.unload', callback)
+end
+
 event.keybinds = {}
 event.keybinds.submap = function(callback)
 	hl.on('keybinds.submap', callback)

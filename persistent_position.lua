@@ -38,7 +38,7 @@ local function save_position(window, x, y)
 		return
 	end
 
-	positions[identifier] = { x = x, y = y}
+	positions[identifier] = { x = x, y = y }
 
 	os.execute('mkdir -p ' .. cache_dir)
 	local file = io.open(save_path, 'w')
@@ -60,7 +60,7 @@ function M.init()
 
 		local x, y = position.x, position.y
 		if x and y then
-			hl.dispatch(hl.dsp.window.move{
+			hl.dispatch(hl.dsp.window.move {
 				x = x,
 				y = y,
 				window = 'address:' .. win.address
