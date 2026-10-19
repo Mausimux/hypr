@@ -1,10 +1,10 @@
+require('keys')
 require('hyprlua')
 
 persistent_position = require('persistent_position')
 no_auto_focus = require('no_auto_focus')
 popout = require('popout')
 
-require('keys')
 require('monitors')
 require('blue_light_filter')
 require('screenshot')

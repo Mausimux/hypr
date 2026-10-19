@@ -44,11 +44,11 @@ return function(application)
 			return
 		end
 
-		local current_workspace = current_workspace()
+		local current_workspace = get_current_workspace()
 		if not current_workspace then return end
 
 		if application.workspace_name == current_workspace.name then
-			local previous_workspace = hl.get_last_workspace()
+			local previous_workspace = get_previous_workspace()
 			if not previous_workspace then return end
 			focus { workspace = previous_workspace }
 			return
@@ -64,12 +64,14 @@ return function(application)
 	bind({ main_mod, 'SHIFT', application.key }, function()
 		local window = application:get_window()
 
-		local current_workspace = current_workspace()
+		local current_workspace = get_current_workspace()
 		if not current_workspace then return end
 
 		if not window then
 			if current_workspace.name == application.workspace_name then
-				focus { workspace = hl.get_last_workspace() }
+				local previous_workspace = get_previous_workspace()
+				if not previous_workspace then return end
+				focus { workspace = previous_workspace }
 				return
 			end
 
@@ -79,7 +81,7 @@ return function(application)
 		end
 
 		if current_workspace.name == application.workspace_name then
-			local previous_workspace = hl.get_last_workspace()
+			local previous_workspace = get_previous_workspace()
 			if not previous_workspace then return end
 			move { window = window, workspace = previous_workspace }
 			return
