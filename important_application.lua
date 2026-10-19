@@ -44,7 +44,7 @@ return function(application)
 			return
 		end
 
-		local current_workspace = hl.get_active_special_workspace() or hl.get_active_workspace()
+		local current_workspace = current_workspace()
 		if not current_workspace then return end
 
 		if application.workspace_name == current_workspace.name then
@@ -64,7 +64,7 @@ return function(application)
 	bind({ main_mod, 'SHIFT', application.key }, function()
 		local window = application:get_window()
 
-		local current_workspace = hl.get_active_special_workspace() or hl.get_active_workspace()
+		local current_workspace = current_workspace()
 		if not current_workspace then return end
 
 		if not window then
