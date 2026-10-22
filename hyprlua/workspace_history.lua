@@ -1,5 +1,5 @@
-local cache_dir = os.getenv('HOME') .. '/.cache/hypr/'
-local save_path = cache_dir .. 'workspace_history'
+local cache = require('hyprlua.cache')
+local save_path = cache.path('workspace_history')
 
 local history = {
 	stack = {},
@@ -18,7 +18,7 @@ if file then
 end
 
 event.config.unload(function()
-	os.execute('mkdir -p' .. cache_dir)
+	cache.ensure_dir()
 	local file = io.open(save_path, 'w')
 	if not file then return end
 	for _, workspace in ipairs(history.stack) do

@@ -1,14 +1,13 @@
 local M = {}
+local cache = require('hyprlua.cache')
+local save_path = cache.path('persistent_position')
 
 local tag_name = 'persistent_position'
-
-local cache_dir = os.getenv('HOME') .. '/.cache/hypr'
-local save_path = cache_dir .. '/persistent_position'
 
 local function load_positions()
 	local positions = {}
 
-	os.execute('mkdir -p ' .. cache_dir)
+	cache.ensure_dir()
 	local file = io.open(save_path, 'r')
 	if not file then return positions end
 
@@ -40,7 +39,7 @@ local function save_position(window, x, y)
 
 	positions[identifier] = { x = x, y = y }
 
-	os.execute('mkdir -p ' .. cache_dir)
+	cache.ensure_dir()
 	local file = io.open(save_path, 'w')
 	if not file then return end
 
