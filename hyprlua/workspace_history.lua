@@ -66,10 +66,4 @@ local function get_previous_workspace()
 	return history.stack[#history.stack]
 end
 
-bind({ main_mod, 'BACKSPACE' }, function()
-	local previous_workspace = get_previous_workspace()
-	if not previous_workspace then return end
-	focus { workspace = previous_workspace }
-end)
-
 return get_previous_workspace

@@ -6,3 +6,9 @@ for i = 1, 10 do
 	bind({main_mod, 'SHIFT', key}, hl.dsp.window.move { workspace = i })
 end
 
+bind({ main_mod, 'BACKSPACE' }, function()
+	local previous_workspace = get_previous_workspace()
+	if not previous_workspace then return end
+	focus { workspace = previous_workspace }
+end)
+
