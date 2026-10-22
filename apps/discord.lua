@@ -2,7 +2,7 @@ local important_application = require('important_application')
 
 local discord = {
 	key = 'D',
-	cmd = 'discord',
+	command = 'discord',
 	initial_class = 'discord',
 	workspace_name = 'discord',
 }

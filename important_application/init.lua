@@ -27,12 +27,12 @@ return function(application)
 	end
 
 	function application:open(rules)
-		local cmd = self.cmd
-		if type(cmd) == 'function' then
-			cmd = cmd()
+		local command = self.command
+		if type(command) == 'function' then
+			command = command()
 		end
-		if type(cmd) == 'string' then
-			return hl.dispatch(hl.dsp.exec_cmd(cmd, rules))
+		if type(command) == 'string' then
+			return cmd(command, rules)()
 		end
 	end
 

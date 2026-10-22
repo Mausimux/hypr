@@ -6,7 +6,7 @@ local important_application = require('important_application')
 
 local browser = {
 	key = 'B',
-	cmd = 'brave-origin',
+	command = 'brave-origin',
 	initial_class = 'brave-origin',
 	workspace_name = 'browser',
 }

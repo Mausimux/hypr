@@ -1,19 +1,10 @@
-bind(
-	{ 'Print' },
-	hl.dsp.exec_cmd('hyprshot -m active -m output --clipboard-only')
-)
-bind(
-	{ main_mod, 'Print' },
-	hl.dsp.exec_cmd('hyprshot -m active -m window --clipboard-only')
-)
-bind(
-	{ 'SHIFT', 'Print' },
-	hl.dsp.exec_cmd('hyprshot -m region --clipboard-only')
-)
+bind({ 'Print' }, cmd('hyprshot -m active -m output --clipboard-only'))
+bind({ main_mod, 'Print' }, cmd('hyprshot -m active -m window --clipboard-only'))
+bind({ 'SHIFT', 'Print' }, cmd('hyprshot -m region --clipboard-only'))
 
 -- Disable animation on selection overlay to avoid black borders around screenshots
 -- https://discord.com/channels/961691461554950145/967398886530515067/1496929329555312659
-hl.layer_rule{
+hl.layer_rule {
 	match = { namespace = 'selection' },
 	no_anim = true,
 }

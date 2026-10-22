@@ -3,7 +3,7 @@ local desktop_file_application = require('desktop_file_application')
 
 local whatsapp = {
 	key = 'W',
-	cmd = desktop_file_application('WhatsApp Web'),
+	command = desktop_file_application('WhatsApp Web'),
 	initial_title = 'WhatsApp Web',
 	workspace_name = 'whatsapp',
 }
