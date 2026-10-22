@@ -49,14 +49,17 @@ end
 
 history:push(hl.get_active_workspace() or '1')
 
-event.workspace.active(function(workspace)
+local function push_if_not_going_back(workspace)
 	if history.going_back then
 		history.going_back = false
 		return
 	end
 
 	history:push(workspace)
-end)
+end
+
+event.workspace.active(push_if_not_going_back)
+event.workspace.special_active(push_if_not_going_back)
 
 local function get_previous_workspace()
 	history:pop()
