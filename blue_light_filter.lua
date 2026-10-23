@@ -1,8 +1,8 @@
 event.start(cmd('hyprsunset'))
 
-bind({ main_mod, 'XF86AudioRaiseVolume' }, cmd('hyprctl hyprsunset temperature +250'),
+bind({ key.main_mod, key.audio.volume.up }, cmd('hyprctl hyprsunset temperature +250'),
 	{ locked = true, repeating = true })
-bind({ main_mod, 'XF86AudioLowerVolume' }, cmd('hyprctl hyprsunset temperature -250'),
+bind({ key.main_mod, key.audio.volume.down }, cmd('hyprctl hyprsunset temperature -250'),
 	{ locked = true, repeating = true })
-bind({ main_mod, 'XF86AudioMute' }, cmd('hyprctl hyprsunset temperature 6000'),
+bind({ key.main_mod, key.audio.volume.mute }, cmd('hyprctl hyprsunset temperature 6000'),
 	{ locked = true, repeating = true })

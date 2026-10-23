@@ -36,7 +36,7 @@ return function(application)
 		end
 	end
 
-	bind({ main_mod, application.key }, function()
+	bind({ key.main_mod, application.key }, function()
 		local window = application:get_window()
 		if not window then
 			application.rule:set_enabled(true)
@@ -61,7 +61,7 @@ return function(application)
 		focus { window = window }
 	end)
 
-	bind({ main_mod, 'SHIFT', application.key }, function()
+	bind({ key.main_mod, 'SHIFT', application.key }, function()
 		local window = application:get_window()
 
 		local current_workspace = get_current_workspace()

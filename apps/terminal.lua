@@ -1,5 +1,5 @@
 local terminal = 'kitty'
 
-bind({ main_mod, 'T' }, cmd(terminal))
+bind({ key.main_mod, 'T' }, cmd(terminal))
 
 return terminal

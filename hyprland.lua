@@ -4,7 +4,7 @@ persistent_position = require('persistent_position')
 no_auto_focus = require('no_auto_focus')
 popout = require('popout')
 
-require('keys')
+key = require('key')
 require('monitors')
 require('blue_light_filter')
 require('screenshot')

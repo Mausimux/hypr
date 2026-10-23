@@ -9,6 +9,7 @@ local discord = {
 
 important_application(discord)
 
-bind({ mouse_side_last }, hl.dsp.pass { window = 'initialclass:' .. discord.initial_class }, { auto_consuming = true })
+bind({ key.mouse.side.last }, hl.dsp.pass { window = 'initialclass:' .. discord.initial_class },
+	{ auto_consuming = true })
 
 popout.add { initial_title = 'Discord Popout', initial_class = discord.initial_class }

@@ -1,7 +1,7 @@
-return function(keys, dispatcher, opts)
-	if type(keys) == 'table' then
-		keys = table.concat(keys, ' + ')
+return function(keybind, dispatcher, opts)
+	if type(keybind) == 'table' then
+		keybind = table.concat(keybind, ' + ')
 	end
-	return hl.bind(keys, dispatcher, opts)
+	return hl.bind(keybind, dispatcher, opts)
 end
 

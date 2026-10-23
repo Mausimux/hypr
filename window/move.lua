@@ -5,9 +5,9 @@ local directions = {
 	L = 'right',
 }
 
-for key, direction in pairs(directions) do
-	bind({main_mod, key}, hl.dsp.focus { direction = direction })
-	bind({main_mod, 'SHIFT', key}, hl.dsp.window.move { direction = direction })
+for bind_key, direction in pairs(directions) do
+	bind({ key.main_mod, bind_key }, hl.dsp.focus { direction = direction })
+	bind({ key.main_mod, 'SHIFT', bind_key }, hl.dsp.window.move { direction = direction })
 end
 
-bind({main_mod, left_click_drag}, hl.dsp.window.drag(), { mouse = true })
+bind({ key.main_mod, key.mouse.left }, hl.dsp.window.drag(), { mouse = true })

@@ -1,3 +1,3 @@
 local menu = 'rofi -show drun'
 
-bind({ main_mod, 'SPACE' }, cmd(menu))
+bind({ key.main_mod, 'SPACE' }, cmd(menu))
